@@ -1,0 +1,29 @@
+:host {
+  display: flex!important;
+  justify-content: center!important;
+  margin: 100px 0px!important;
+}
+
+/* .mat-form-field {
+  width: 100%!important;
+  min-width: 300px!important;
+} */
+
+mat-card-title,
+mat-card-content {
+  display: flex!important;
+  justify-content: center!important;
+}
+
+.error {
+  padding: 16px!important;
+  width: 300px!important;
+  color: rgb(252, 9, 9)!important;
+  background-color: red!important;
+}
+
+.buttonSubmit {
+  display: flex!important;
+  justify-content: flex-end!important;
+  justify-items: center!important;
+}

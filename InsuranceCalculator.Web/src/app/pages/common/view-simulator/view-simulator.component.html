@@ -1,0 +1,143 @@
+<div  class="form tarjeta">
+  <div class="form-row">
+    <div class="form-control">
+      <h1>Condiciones iniciales</h1>
+    </div>
+    <div class="form-control">
+      <h1>Proyecciones</h1>
+    </div>
+  </div>
+  <div class="form-row">
+    <div class="form-control">
+      <mat-table
+        [dataSource]="initialConditionDataSource"
+        class="mat-elevation-z8"
+      >
+        <!-- Columna fija -->
+        <ng-container matColumnDef="staticColumn">
+          <mat-header-cell *matHeaderCellDef> Concepto </mat-header-cell>
+          <mat-cell *matCellDef="let element">
+            {{ element.staticColumn }}
+          </mat-cell>
+        </ng-container>
+
+        <!-- Columnas dinámicas -->
+        <ng-container
+          *ngFor="let column of initialConditionDynamicColumns"
+          [matColumnDef]="column"
+        >
+          <mat-header-cell *matHeaderCellDef> {{ column }} </mat-header-cell>
+          <mat-cell *matCellDef="let element; let i = index">
+            <!-- Aquí estamos usando la condición para la fila específica -->
+            <span *ngIf="i !== 0">{{
+              element[column] | currency : "USD" : "symbol"
+            }}</span>
+            <span *ngIf="i === 0">{{ element[column] }}</span>
+          </mat-cell>
+        </ng-container>
+
+        <mat-header-row
+          *matHeaderRowDef="initialConditionDisplayedColumns"
+        ></mat-header-row>
+        <mat-row
+          *matRowDef="let row; columns: initialConditionDisplayedColumns"
+        ></mat-row>
+      </mat-table>
+    </div>
+
+    <div class="form-control">
+      <mat-table [dataSource]="proyeccionDataSource" class="mat-elevation-z8">
+        <!-- Columna fija -->
+        <ng-container matColumnDef="staticColumn">
+          <mat-header-cell *matHeaderCellDef> Concepto </mat-header-cell>
+          <mat-cell *matCellDef="let element">
+            {{ element.staticColumn }}
+          </mat-cell>
+        </ng-container>
+
+        <!-- Columnas dinámicas -->
+        <ng-container
+          *ngFor="let column of proyectionDynamicColumns"
+          [matColumnDef]="column"
+        >
+          <mat-header-cell *matHeaderCellDef> {{ column }} </mat-header-cell>
+          <mat-cell *matCellDef="let element; let i = index">
+            <!-- Aquí estamos usando la condición para la fila específica -->
+            <span *ngIf="i !== 0">{{
+              element[column] | currency : "USD" : "symbol"
+            }}</span>
+            <span *ngIf="i === 0">{{ element[column] }}</span>
+          </mat-cell>
+        </ng-container>
+
+        <mat-header-row
+          *matHeaderRowDef="proyectionDisplayedColumns"
+        ></mat-header-row>
+        <mat-row
+          *matRowDef="let row; columns: proyectionDisplayedColumns"
+        ></mat-row>
+      </mat-table>
+    </div>
+  </div>
+  <div class="form-row1column">
+    <h1>Ahorros</h1>
+  </div>
+  <div class="form-row1column">
+    <table mat-table [dataSource]="savingsDataSource" class="mat-elevation-z8">
+      <!--- Note that these columns can be defined in any order.
+            The actual rendered columns are set as a property on the row definition" -->
+
+      <!-- Position Column -->
+      <ng-container matColumnDef="proyectionNumber">
+        <th mat-header-cell *matHeaderCellDef>Proyección</th>
+        <td mat-cell *matCellDef="let element">
+          {{ element.proyectionNumber }}
+        </td>
+      </ng-container>
+
+      <ng-container matColumnDef="interestSavings">
+        <th mat-header-cell *matHeaderCellDef>Valor ahorrado en intereses</th>
+        <td mat-cell *matCellDef="let element">
+          {{ element.interestSavings | currency : "USD" : "symbol"  }}
+        </td>
+      </ng-container>
+
+      <ng-container matColumnDef="insuranceSavings">
+        <th mat-header-cell *matHeaderCellDef>Valor ahorrado en seguros</th>
+        <td mat-cell *matCellDef="let element">
+          {{ element.insuranceSavings | currency : "USD" : "symbol" }}
+        </td>
+      </ng-container>
+
+      <ng-container matColumnDef="totalSavings">
+        <th mat-header-cell *matHeaderCellDef>Total de ahorro estimado</th>
+        <td mat-cell *matCellDef="let element">{{ element.totalSavings | currency : "USD" : "symbol" }}</td>
+      </ng-container>
+
+      <ng-container matColumnDef="reducedInstallments">
+        <th mat-header-cell *matHeaderCellDef>Cuotas reducidas</th>
+        <td mat-cell *matCellDef="let element">
+          {{ element.reducedInstallments }}
+        </td>
+      </ng-container>
+
+      <ng-container matColumnDef="savingsYears">
+        <th mat-header-cell *matHeaderCellDef>Ahorro en años</th>
+        <td mat-cell *matCellDef="let element">
+          {{ element.savingsYears }}
+        </td>
+      </ng-container>
+
+      <tr mat-header-row *matHeaderRowDef="displayedSavingColumns"></tr>
+      <tr mat-row *matRowDef="let row; columns: displayedSavingColumns"></tr>
+    </table>
+  </div>
+  <div class="form-row">
+    <div  class="form-control">
+      <button mat-raised-button color="warn" type="button" (click)="recalcularValores()">Recalcular valores</button>
+    </div>
+    <div  class="form-control">
+      <button mat-raised-button color="primary" type="button" (click)="downloadFile()">Descargar simulación</button>
+    </div>
+  </div>
+</div>

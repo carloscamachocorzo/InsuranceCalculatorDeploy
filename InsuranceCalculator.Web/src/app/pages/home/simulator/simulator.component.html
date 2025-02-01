@@ -1,0 +1,209 @@
+<div class="tarjeta">
+  <mat-accordion>
+    <mat-expansion-panel hideToggle [expanded]="step() === 0" (opened)="setStep(0)">
+      <mat-expansion-panel-header>
+        <mat-panel-title> Estudio Financiero</mat-panel-title>
+        <mat-panel-description></mat-panel-description>
+      </mat-expansion-panel-header>
+      <h1>Estudio Financiero</h1>
+      <form [formGroup]="formSimulator" (ngSubmit)="submit()" class="form">
+        <div>
+          <div class="form-row">
+            <div  class="form-control">
+              <mat-form-field appearance="fill">
+                <mat-label>Nombre del cliente</mat-label>
+                <input matInput formControlName="NameClient" />
+                <mat-error *ngIf="hasError('NameClient', 'required')"
+                  >El Nombre del cliente es requerido</mat-error
+                >
+              </mat-form-field>
+            </div>
+            <div  class="form-control">
+              <mat-form-field appearance="fill">
+                <mat-label>Asesor Financiero</mat-label>
+                <input matInput formControlName="FinancialAdvisor" />
+                <mat-error *ngIf="hasError('FinancialAdvisor', 'required')"
+                  >El Asesor Financiero es requerido</mat-error
+                >
+              </mat-form-field>
+            </div>
+            <div  class="form-control">
+              <mat-form-field appearance="fill">
+                <mat-label>Banco</mat-label>
+                <input matInput formControlName="BankName" />
+                <mat-error *ngIf="hasError('BankName', 'required')"
+                  >El Banco es requerido</mat-error
+                >
+              </mat-form-field>
+            </div>
+            <div  class="form-control">
+              <mat-form-field appearance="fill">
+                <mat-label>Número del credito</mat-label>
+                <input matInput formControlName="CreditNumber" />
+                <mat-error *ngIf="hasError('CreditNumber', 'required')"
+                  >El número del credito es requerido</mat-error
+                >
+              </mat-form-field>
+            </div>
+          </div>
+          <div>
+            <h2>Condiciones actuales con el banco</h2>
+          </div>
+          <div class="form-row">
+            <div  class="form-control">
+              <mat-form-field appearance="fill">
+                <mat-label>Saldo del crédito</mat-label>
+                <input matInput formControlName="Balance" type ="number" step="0.01"/>
+                <mat-error *ngIf="hasError('Balance', 'required')"
+                  >El Saldo del crédito es requerido</mat-error
+                >
+              </mat-form-field>
+            </div>
+            <div  class="form-control">
+              <mat-form-field appearance="fill">
+                <mat-label>Número cuotas pendientes</mat-label>
+                <input matInput formControlName="PendingInstallments" type ="number" />
+                <mat-error *ngIf="hasError('PendingInstallments', 'required')"
+                  >El Número cuotas pendientes es requerido</mat-error
+                >
+              </mat-form-field>
+            </div>
+            <div  class="form-control">
+              <mat-form-field appearance="fill">
+                <mat-label>Valor actual de la cuota</mat-label>
+                <input matInput formControlName="MonthlyInstallment" type ="number" step="0.01" />
+                <mat-error *ngIf="hasError('MonthlyInstallment', 'required')"
+                  >El Valor mensual de la cuota es requerido</mat-error
+                >
+              </mat-form-field>
+            </div>
+            <div  class="form-control">
+              <mat-form-field appearance="fill">
+                <mat-label>Costo Seguros actuales</mat-label>
+                <input matInput formControlName="CurrentInsuranceCost" type ="number" step="0.01" />
+                <mat-error *ngIf="hasError('CurrentInsuranceCost', 'required')"
+                  >El Costo Seguros actuales es requerido</mat-error
+                >
+              </mat-form-field>
+            </div>
+          </div>
+
+          <div class="form-row">
+            <div  class="form-control">
+              <mat-form-field appearance="fill">
+                <mat-label>Monto abono capital</mat-label>
+                <input matInput formControlName="CapitalPayment" type ="number" step="0.01" />
+                <mat-error *ngIf="hasError('CapitalPayment', 'required')"
+                  >El Monto abono capital es requerido</mat-error
+                >
+              </mat-form-field>
+            </div>
+            <div  class="form-control">
+              <mat-form-field appearance="fill">
+                <mat-label>Monto abono a intereses</mat-label>
+                <input matInput formControlName="InterestPayment" type ="number" step="0.01" />
+                <mat-error *ngIf="hasError('InterestPayment', 'required')"
+                  >El Monto abono a intereses es requerido</mat-error
+                >
+              </mat-form-field>
+            </div>
+            <div  class="form-control">
+              <mat-form-field appearance="fill">
+                <mat-label>Numero de cuotas canceladas</mat-label>
+                <input matInput formControlName="CanceledInstallments" type ="number" />
+                <mat-error *ngIf="hasError('CanceledInstallments', 'required')"
+                  >El Numero de cuotas canceladas es requerido</mat-error
+                >
+              </mat-form-field>
+            </div>
+            <div  class="form-control">
+              <mat-form-field appearance="fill">
+                <mat-label>Tasa de Interes aplicada (%)</mat-label>
+                <input matInput formControlName="InterestRate" type ="number" step="0.01"/>
+                <mat-error *ngIf="hasError('InterestRate', 'required')"
+                  >La Tasa de Interes aplicada es requerida</mat-error
+                >
+              </mat-form-field>
+            </div>
+          </div>
+
+          <div class="form-row">
+            <div  class="form-control">
+              <mat-form-field appearance="fill">
+                <mat-label>Honorarios</mat-label>
+                <input matInput formControlName="PercentageFees" type ="number" step="0.01"/>
+              </mat-form-field>
+            </div>
+            <div  class="form-control">
+              <mat-form-field appearance="fill">
+                <mat-label>Subsidio</mat-label>
+                <input matInput formControlName="Subsidy" type ="number" step="0.01"/>
+              </mat-form-field>
+            </div>
+          </div>
+          <div class="form-row">
+            <h2>Proyecciones</h2>
+          </div>
+          <div class="form-row">
+            <div class="form-control">
+              <mat-form-field appearance="fill" class="input-field">
+                <mat-label>Agregar Proyección (meses)</mat-label>
+                <input
+                  matInput
+                  formControlName="newItem"
+                  placeholder="Add a new item"
+                  type ="number"
+                />
+              </mat-form-field>
+              <mat-error *ngIf="hasError('ListProjectionperiod', 'required')"
+                >Agregar proyecciones es requerido</mat-error
+              >
+              <mat-error *ngIf="validationPeriod"
+              >La proyección tiene que ser menor al numero de cuotas pendientes</mat-error
+            >
+            </div>
+            <div  class="form-control">
+              <button
+                type="button"
+                mat-icon-button
+                matSuffix
+                color="primary"
+                (click)="addItem()"
+                [disabled]="!canAddItems()"
+              >
+              <mat-icon>add</mat-icon>
+              </button>
+            </div>
+            <div class="form-control">
+              <mat-chip-set>
+                <mat-chip *ngFor="let item of items" (removed)="removeItem(item)">
+                  {{ item }} Meses
+                  <mat-icon matChipRemove class="red-icon">cancel</mat-icon>
+                </mat-chip>
+              </mat-chip-set>
+            </div>
+          </div>
+        </div>
+        <div class="form-row2column">
+          <button mat-raised-button color="primary" type="submit">Evaluar</button>
+          <button mat-raised-button color="warn" type="button" (click)="resetForm()">Limpiar</button>
+          <!-- <button mat-raised-button color="primary">Guardar Simulación</button> -->
+      </div>
+      </form>
+    </mat-expansion-panel>
+    <mat-expansion-panel hideToggle [expanded]="step() === 1" (opened)="setStep(1)" [disabled]="!isResultsPanelEnabled">
+      <mat-expansion-panel-header>
+        <mat-panel-title> Resultados </mat-panel-title>
+        <mat-panel-description>
+          Descripción estudio financiero
+        </mat-panel-description>
+      </mat-expansion-panel-header>
+      <app-view-simulator (updateParentState)="handleChildUpdate($event)" [data]="resultadoFinanciero" [request]="bankConditionsRequest"></app-view-simulator>
+    </mat-expansion-panel>
+  </mat-accordion>
+
+
+</div>
+
+
+

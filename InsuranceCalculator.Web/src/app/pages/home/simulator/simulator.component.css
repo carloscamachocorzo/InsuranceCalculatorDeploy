@@ -1,0 +1,83 @@
+.tarjeta {
+  max-width: 100%;
+  margin-left: 5%;
+  padding: 5%;
+
+}
+
+.red-icon {
+  color: red!important;
+}
+
+.tarjeta {
+  padding: 16px;
+  background-color: #fff;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.form {
+  display: grid;
+  gap: 16px;
+  grid-template-columns: 1fr; /* Una sola columna por defecto */
+  padding: 20px;
+}
+
+.form-row {
+  display: grid;
+  gap: 16px;
+  grid-template-columns: 1fr; /* Por defecto, una sola columna */
+}
+
+.form-row-2column {
+  display: grid;
+  gap: 16px;
+  grid-template-columns: 1fr; /* Por defecto, una sola columna */
+}
+
+.form-control {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+@media (min-width: 600px) {
+  .form-row {
+    grid-template-columns: repeat(2, 1fr); /* En pantallas medianas, 2 columnas */
+  }
+}
+
+@media (min-width: 900px) {
+  .form-row {
+    grid-template-columns: repeat(4, 1fr); /* En pantallas grandes, 4 columnas */
+  }
+  .form-row-2column {
+    grid-template-columns: repeat(2, 1fr)!important; /* En pantallas grandes, 4 columnas */
+  }
+}
+
+input {
+  width: 100%;
+}
+
+mat-form-field {
+  width: 100%;
+}
+
+button {
+  width: 100%;
+  margin-top: 16px;
+  width: fit-content;
+}
+
+
+
+.mat-accordion {
+  margin-top: 16px;
+}
+
+.mat-expansion-panel {
+  margin-top: 10px;
+}
+
+
+

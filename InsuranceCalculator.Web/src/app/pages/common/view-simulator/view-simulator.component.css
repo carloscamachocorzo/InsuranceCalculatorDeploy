@@ -1,0 +1,67 @@
+.form {
+  display: grid;
+  gap: 16px;
+  grid-template-columns: 1fr; /* Una sola columna por defecto */
+  padding: 20px;
+}
+
+.form-row {
+  display: grid;
+  gap: 16px;
+  grid-template-columns: 1fr; /* Por defecto, una sola columna */
+}
+
+.form-control {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.form-row1column{
+  display: grid;
+  gap: 16px;
+  grid-template-columns: 1fr; /* Por defecto, una sola columna */
+}
+
+
+
+@media (min-width: 600px) {
+  .form-row {
+    grid-template-columns: repeat(1, 1fr); /* En pantallas medianas, 2 columnas */
+  }
+}
+
+@media (min-width: 900px) {
+  .form-row {
+    grid-template-columns: repeat(2, 1fr); /* En pantallas grandes, 4 columnas */
+  }
+}
+
+
+.tarjeta {
+  padding: 16px;
+  background-color: #fff;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+
+
+/* Estilo para las filas pares */
+mat-row:nth-child(even) {
+  background-color: #f2f2f2;
+}
+
+/* Efecto hover para las filas */
+mat-row:hover {
+  background-color: #eaf4f8;
+  transition: background-color 0.3s ease;
+}
+
+tr:nth-child(even) {
+  background-color: #f2f2f2;
+}
+
+tr:hover {
+  background-color: #eaf4f8;
+  transition: background-color 0.3s ease;
+}

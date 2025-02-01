@@ -1,4 +1,4 @@
 export const environment = {
   production: true,
-  backend: 'http://localhost:52596/api'
+  backend: 'https://juanjerz-001-site1.ptempurl.com/api'
 };
