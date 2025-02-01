@@ -1,0 +1,1 @@
+dotnet ef dbcontext scaffold --no-pluralize --no-onconfiguring --use-database-names "Server=insuranceqap.database.windows.net;Database=InsuranceDb;User Id=insurance;Password=Adminqap*;MultipleActiveResultSets=True;" Microsoft.EntityFrameworkCore.SqlServer -f -t users  --context UsersAuthorizationContext  --context-dir DataAccess/Contexts -o  Entities/UsersAuthorizationEntities

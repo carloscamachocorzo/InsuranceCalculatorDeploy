@@ -1,0 +1,6 @@
+@Insurance.Calculator.Authorization_HostAddress = http://localhost:5196
+
+GET {{Insurance.Calculator.Authorization_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
