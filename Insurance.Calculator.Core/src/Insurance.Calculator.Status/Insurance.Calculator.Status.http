@@ -1,6 +1,0 @@
-@Insurance.Calculator.Status_HostAddress = http://localhost:5244
-
-GET {{Insurance.Calculator.Status_HostAddress}}/weatherforecast/
-Accept: application/json
-
-###
