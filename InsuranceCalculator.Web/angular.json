@@ -12,8 +12,7 @@
       "architect": {
         "build": {
           "builder": "@angular-devkit/build-angular:application",
-          "options": {
-            "port": 10000,
+          "options": {            
             "host": "0.0.0.0",
             "outputPath": "dist/insurance-calculator.web",
             "index": "src/index.html",
