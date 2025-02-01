@@ -12,8 +12,7 @@
       "architect": {
         "build": {
           "builder": "@angular-devkit/build-angular:application",
-          "options": {             
-            "allowedHosts": ["insurancecalculatordeploy.onrender.com"],           
+          "options": {                        
             "outputPath": "dist/insurance-calculator.web",
             "index": "src/index.html",
             "browser": "src/main.ts",
