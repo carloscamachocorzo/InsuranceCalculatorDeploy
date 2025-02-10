@@ -1,25 +1,42 @@
+/* Estilos para la barra lateral */
 .mat-sidenav {
-  width: 150px!important;
+  width: 150px !important;
+  background-color: #f5f5f5; /* Color de fondo suave */
 }
 
-.mat-toolbar {
-  display: flex!important;
-  justify-content: space-between!important;
+/* Estilos para los botones del mat-nav-list */
+.mat-nav-list {
+  a.mat-list-item {
+    color: #333; /* Color de texto oscuro para contraste */
+    padding: 10px 16px; /* Padding adecuado */
+    transition: background-color 0.3s, color 0.3s; /* Transición suave */
+
+    &:hover {
+      background-color: rgba(25, 118, 210, 0.1); /* Color de fondo suave al pasar el mouse */
+      color: #1976d2; /* Cambia el color del texto al pasar el mouse */
+    }
+
+    mat-icon {
+      margin-right: 8px; /* Espacio entre el ícono y el texto */
+    }
+  }
+
+  .active-link {
+    font-weight: bold !important;
+    color: #1976d2 !important;
+    background-color: rgba(25, 118, 210, 0.1) !important;
+    border-left: 4px solid #1976d2 !important;
+  }
 }
 
- .active-link {
-  font-weight: bold!important;
-  color: #1976d2!important;
-  background-color: rgba(25, 118, 210, 0.1)!important;
-  border-left: 4px solid #1976d2!important;
-}
-
-/* Content area */
+/* Estilos para el contenido dinámico */
 .content {
   padding: 0;
   display: flex;
   flex-direction: column;
   min-height: 80vh;
+  background-color: #ffffff; /* Fondo blanco para el contenido dinámico */
+
   @media (min-width: 375px) {
     padding: 5px;
   }
@@ -31,4 +48,88 @@
   @media (min-width: 1025px) {
     padding: 16px;
   }
+}
+
+/* Estilos para el botón de cerrar sesión */
+.icon-button {
+  cursor: pointer;
+  padding: 8px;
+  border-radius: 4px;
+  background-color: #f5f5f5;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  transition: background-color 0.3s, box-shadow 0.3s;
+
+  &:hover {
+    background-color: #e0e0e0;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+  }
+
+  &:active {
+    background-color: #d5d5d5;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+  }
+}
+
+mat-toolbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center; /* Alinea los elementos verticalmente */
+}
+
+/* Clase para el botón de cerrar sesión */
+.logout-button {
+  margin-left: auto; /* Empuja el botón a la izquierda */
+  display: flex;
+  align-items: center; /* Alinea el ícono y el texto verticalmente */
+  padding: 8px 16px; /* Padding para que el botón no esté pegado al borde */
+  background-color: transparent; /* Fondo transparente */
+  color: white; /* Color del texto */
+  border: none; /* Sin borde */
+  cursor: pointer; /* Cambia el cursor a una mano */
+  transition: background-color 0.3s; /* Transición suave */
+
+  &:hover {
+    background-color: rgba(255, 255, 255, 0.1); /* Fondo suave al pasar el mouse */
+  }
+
+  &:active {
+    background-color: rgba(255, 255, 255, 0.2); /* Fondo más oscuro al hacer clic */
+  }
+
+  mat-icon {
+    margin-right: 8px; /* Espacio entre el ícono y el texto */
+  }
+}
+
+/* Clase para el spacer */
+.spacer {
+  flex: 1; /* Ocupa todo el espacio disponible */
+}
+
+/* Contenedor del logo y el texto */
+.logo-container {
+  display: flex;
+  flex-direction: column; /* Organiza los elementos en una columna */
+  align-items: center; /* Centra horizontalmente */
+}
+
+/* Estilos para la imagen del logo */
+.logo {
+  height: 40px; /* Altura de la imagen */
+  margin-bottom: 4px; /* Espacio entre el logo y el texto */
+}
+
+/* Estilos para el nombre de la empresa */
+.company-name {
+  font-size: 14px; /* Tamaño del texto */
+  font-weight: 500; /* Grosor de la fuente */
+  color: white; /* Color del texto (blanco para contrastar con el fondo) */
+}
+
+.encabezado {
+  display: flex;
+  align-items: center; /* Centra verticalmente el contenido */
+  padding: 8px 16px; /* Padding para el toolbar */
+  background-color: #19d26f; /* Color de fondo del toolbar */
+  padding-top:10px;
 }

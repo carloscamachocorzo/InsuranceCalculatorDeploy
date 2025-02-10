@@ -10,6 +10,7 @@ import { DialogDto } from '../../../core/models/dialog-dto';
 import { DialogMessageComponent } from '../../common/dialog-message/dialog-message.component';
 import { ViewSimulatorComponent } from '../../common/view-simulator/view-simulator.component';
 import { FinancialStudyDto } from '../../../core/models/response/bank-conditions-response';
+import { ProgressSpinnerService } from '../../../core/services/progress-spinner.service';
 
 @Component({
   selector: 'app-simulator',
@@ -71,7 +72,7 @@ export class SimulatorComponent {
     ListProjectionperiod: new FormControl([], Validators.required),
   });
 
-  constructor(private router: Router, private service: HttpClientService) {}
+  constructor(private router: Router, private service: HttpClientService,private progressSpinnerService: ProgressSpinnerService) {}
 
   async submit() {
     let dialog = { Tittle: 'Mensaje', Message: '' } as DialogDto;

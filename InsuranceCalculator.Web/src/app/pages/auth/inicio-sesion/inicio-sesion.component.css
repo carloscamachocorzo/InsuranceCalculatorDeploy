@@ -1,15 +1,15 @@
-:host {
+/* :host {
   display: flex!important;
   justify-content: center!important;
   margin: 100px 0px!important;
-}
+} */
 
 /* .mat-form-field {
   width: 100%!important;
   min-width: 300px!important;
 } */
 
-mat-card-title,
+/* mat-card-title,
 mat-card-content {
   display: flex!important;
   justify-content: center!important;
@@ -26,4 +26,44 @@ mat-card-content {
   display: flex!important;
   justify-content: flex-end!important;
   justify-items: center!important;
+} */
+
+.login-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: #f5f5f5;
+}
+
+.login-card {
+  width: 100%;
+  max-width: 400px;
+  padding: 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.login-header {
+  display: flex;
+  flex-direction: column; /* Coloca los elementos en columna */
+  align-items: center; /* Centra los elementos horizontalmente */
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.login-logo {
+  width: 100px; /* Ajusta el tamaño según necesites */
+  height: auto; /* Mantiene la proporción de la imagen */
+  margin-bottom: 20px; /* Espacio entre la imagen y el título */
+  border-radius: 0; /* Elimina el redondeo */
+}
+
+.login-form {
+  display: flex;
+  flex-direction: column;
+}
+
+.full-width {
+  width: 100%;
+  margin-bottom: 15px;
 }

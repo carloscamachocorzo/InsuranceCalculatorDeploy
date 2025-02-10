@@ -24,5 +24,9 @@ export class HomeComponent implements OnInit{
     });
   }
 
+  toLogin(){
+    this.router.navigate(['/auth/login']);
+  }
+
 
 }
